@@ -36,7 +36,7 @@ const skills = [
   },
   {
     name: 'Java Spring',
-    value: 30,
+    value: 50,
   },
 ]
 
