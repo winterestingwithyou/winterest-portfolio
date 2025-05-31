@@ -1,0 +1,11 @@
+@import url(https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap);
+
+/* default font */
+* {
+  font-family: 'Figtree', sans-serif !important;
+}
+
+/* additional font */
+.font-cursive-signature{
+  font-family: 'Dancing Script', cursive !important;
+}
