@@ -8,7 +8,7 @@ head.addHeadObjs({
   link: [{
     rel: 'icon',
     type: 'image/png',
-    href: '/favicon.png'
+    href: `${import.meta.env.BASE_URL}favicon.png`
   }],
 })
 
