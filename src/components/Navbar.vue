@@ -79,11 +79,12 @@ const drawer = ref(false);
       <v-list-item
         v-for="page in pages"
         :key="page.title"        
-        :href="page.route"
+        :to="page.route"
         :title="page.title"
         class="text-capitalize" 
         :style="isActive(page.route)? 'background-color: rgba(255, 255, 255, 0.1)': ''"
         link
+        router
       />
       <v-divider></v-divider>
         <v-list-item
