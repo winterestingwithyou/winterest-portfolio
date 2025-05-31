@@ -45,8 +45,6 @@ const imageUrl = ref('https://th.bing.com/th/id/OIP.gJddvMBHmsYI2OLu56duegAAAA?c
 </script>
 
 <template>
-  <Head title="About" />
-
   <AppLayout>
     <v-container
       fluid

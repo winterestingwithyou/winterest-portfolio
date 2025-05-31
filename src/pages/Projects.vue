@@ -79,8 +79,6 @@ const handleAction = (item) => {
 </script>
 
 <template>
-  <Head title="Projects" />
-
   <AppLayout>
     <v-container
       class="py-6 d-flex flex-column align-center"  
