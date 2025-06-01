@@ -2,10 +2,14 @@
 import { useHead } from '@vueuse/head';
 import { ref } from 'vue';
 import AppLayout from '../layouts/AppLayout.vue';
+import { useLanguage } from '../composables/useLanguage';
+import { I18nT } from 'vue-i18n';
+
+const { t } = useLanguage()
 
 // Head
 useHead({
-  title: 'Home',
+  title: t('pages.home.name'),
 })
 
 // Image url
@@ -29,20 +33,27 @@ const imageUrl = ref('https://th.bing.com/th/id/OIP.5P88wD8ppLN-NTPhXQDV3QHaNK?c
         <v-col cols="12" md="6" class="pr-md-12 mb-10 mb-md-0">
           <div>
             <p class="font-weight-medium text-subtitle-2 text-uppercase mb-2 text-highlight">
-              HELLO
+              {{ t('pages.home.hello') }}
             </p>
-            <h1 
-              class="text-h4 text-sm-h3 text-lg-h2 font-weight-bold mb-6 text-primary"
-              style="line-height: 1.2;"
-            >
-              I'm
-              <span class="text-highlight">Winterest</span>
-              a.k.a
-              <span class="text-highlight">M. Adam Yudistira</span>
-            </h1>
-            <p class="text-body-1 mb-8 text-primary" style="line-height: 1.75;">
-              This is <span class="text-highlight">Winterest</span> | <span class="text-highlight">M. Adam Yudistira</span>, Newbie Web Developer, Frontend Developer, and Backend Developer located Indonesia, aespa fans with <span class="text-highlight">Winter</span> as bias.
-            </p>
+            <i18n-t keypath="pages.home.intro" tag="h1" class="text-h4 text-sm-h3 text-lg-h2 font-weight-bold mb-6 text-primary" style="line-height: 1.2;">
+              <template #alias>
+                <span class="text-highlight">Winterest</span>
+              </template>
+              <template #realname>
+                <span class="text-highlight">M. Adam Yudistira</span>
+              </template>
+            </i18n-t>
+            <i18n-t keypath="pages.home.myself" tag="p" class="text-body-1 mb-8 text-primary" style="line-height: 1.75;">
+              <template #alias>
+                <span class="text-highlight">Winterest</span>
+              </template>
+              <template #realname>
+                <span class="text-highlight">M. Adam Yudistira</span>
+              </template>
+              <template #bias>
+                <span class="text-highlight">Winter</span>
+              </template>
+            </i18n-t>
             <v-hover v-slot:default="{ isHovering, props}">
               <v-btn
                 v-bind="props"
@@ -50,7 +61,7 @@ const imageUrl = ref('https://th.bing.com/th/id/OIP.5P88wD8ppLN-NTPhXQDV3QHaNK?c
                 :color="isHovering ? 'highlight-1' : 'highlight'"
                 class="font-weight-medium text-white" elevation="4"
               >
-                DOWNLOAD CV
+                {{ t('pages.home.download-cv') }}
               </v-btn>
             </v-hover>
           </div>

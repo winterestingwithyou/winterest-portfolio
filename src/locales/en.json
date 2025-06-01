@@ -2,7 +2,10 @@
     "pages": {
         "home": {
             "name": "Home",
-            "hello": "Hello"
+            "hello": "Hello",
+            "intro": "I'm {alias} a.k.a {realname}",
+            "myself": "This is {alias} {'|'} {realname}, Newbie Web Developer, Frontend Developer, and Backend Developer located Indonesia, aespa fans with {bias} as bias.",
+            "download-cv": "Download CV"
         },
         "about": {
             "name": "About"

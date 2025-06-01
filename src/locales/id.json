@@ -2,7 +2,10 @@
     "pages": {
         "home": {
             "name": "Beranda",
-            "hello": "Halo"
+            "hello": "Halo",
+            "intro": "Saya {alias} a.k.a {realname}",
+            "myself": "Ini adalah {alias} {'|'} {realname}, Newbie Web Developer, Frontend Developer, and Backend Developer yang tinggal di Indonesia, fans aespa dengan bias {bias}.",
+            "download-cv": "Unduh CV"
         },
         "about": {
             "name": "Tentang"
