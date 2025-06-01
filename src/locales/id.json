@@ -18,7 +18,12 @@
             "myskills": "Keahlian"
         },
         "projects": {
-            "name": "Projek"
+            "name": "Projek",
+            "title": "Projek",
+            "list": {
+                "description": "Sebuah Web Application untuk manajemen perpustakaan yang dibuat dengan Laravel 10.10. Memiliki fitur CRUD lengkap, autentikasi, konfigurasi role, dan import file. | Sebuah Aplikasi Desktop yang dibuat dengan Java Native, bertujuan untuk memudahkan proses manajemen inventaris / gudang. Aplikasi ini memiliki fitur CRUD lengkap, autentikasi, dan konfigurasi role. | Sebuah Aplikasi Desktop yang dibuat dengan Java Native, bertujuan untuk memudahkan proses pemesanan busana dan permak busana pada UMKM LC Busana. Aplikasi ini memiliki fitur CRUD lengkap, autentikasi, konfigurasi role, manajemen profil, dan penyimpanan embedded"
+            },
+            "view-details": "Lihat Detail"
         }
     },    
     "theme": {

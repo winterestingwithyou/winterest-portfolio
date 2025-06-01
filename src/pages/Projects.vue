@@ -1,11 +1,15 @@
 <script setup>
 import { useHead } from '@vueuse/head'
 import AppLayout from '../layouts/AppLayout.vue'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useLanguage } from '../composables/useLanguage'
+
+// Variabel
+const { t } = useLanguage()
 
 // Head
 useHead({
-  title: 'Projects',
+  title: t('pages.projects.name'),
 })
 
 // Index of Projects
@@ -24,7 +28,7 @@ const projects = ref([
       { text: "MySQL", color: "deep-purple-accent-4" },
     ],
     title: "Larapus",
-    description: "Sebuah Web Application untuk manajemen perpustakaan yang dibuat dengan Laravel 10.10. Memiliki fitur CRUD lengkap, autentikasi, konfigurasi role, dan import file.",
+    description: computed(() => t('pages.projects.list.description', 0)),
     buttonAccent: "deep-purple-accent-4",
     action: ()=>{ window.open('https://github.com/winterestingwithyou/Larapus') },
   },
@@ -38,7 +42,7 @@ const projects = ref([
       { text: "MySQL", color: "teal-accent-4" },
     ],
     title: "Manajemen Inventaris",
-    description: "Sebuah Aplikasi Desktop yang dibuat dengan Java Native, bertujuan untuk memudahkan proses manajemen inventaris / gudang. Aplikasi ini memiliki fitur CRUD lengkap, autentikasi, dan konfigurasi role.",
+    description: computed(() => t('pages.projects.list.description', 1)),
     buttonAccent: "teal-accent-4",
     action: ()=>{ window.open('https://github.com/winterestingwithyou/Manajemen-Inventaris') },
   },
@@ -52,7 +56,7 @@ const projects = ref([
       { text: "MySQL", color: "orange-darken-2" },
     ],
     title: "LC Busana",
-    description: "Sebuah Aplikasi Desktop yang dibuat dengan Java Native, bertujuan untuk memudahkan proses pemesanan busana dan permak busana pada UMKM LC Busana. Aplikasi ini memiliki fitur CRUD lengkap, autentikasi, konfigurasi role, manajemen profil, dan penyimpanan embedded",
+    description: computed(()=> t('pages.projects.list.description', 2)),
     buttonAccent: "orange-darken-2",
     action: ()=>{ window.open('https://github.com/winterestingwithyou/LC-Busana') },
   },
@@ -87,8 +91,11 @@ const handleAction = (item) => {
     >
       <div class="d-flex align-center mb-6 justify-center justify-md-start">
         <span class="bg-highlight mr-3" style="height: 2px; width: 2.5rem"></span>
-        <h1 class="text-primary text-h5 text-md-h4 font-weight-bold mb-8" style="height: 2px; letter-spacing: -0.025em;">
-           PROJECTS 
+        <h1
+          class="text-primary text-h5 text-md-h4 font-weight-bold mb-8"
+          style="height: 2px; letter-spacing: -0.025em;"
+        >
+          <span class="text-uppercase">{{ t('pages.projects.title') }} </span>
         </h1>
         <span class="bg-highlight ml-3" style="height: 2px; width: 2.5rem"></span>        
       </div>
@@ -161,7 +168,7 @@ const handleAction = (item) => {
                       style="align-self: self-start"
                       :color="project.buttonAccent"
                     >
-                      View Details
+                      {{ t('pages.projects.view-details') }}
                     </v-btn>
                 </v-card-text>
               </v-card>

@@ -18,7 +18,12 @@
             "myskills": "My skills"
         },
         "projects": {
-            "name": "Projects"
+            "name": "Projects",
+            "title": "Projects",
+            "list": {
+                "description": "A web application for library management built with Laravel 10.10. It features complete CRUD, authentication, role configuration, and file import. | A desktop application built with native Java, aimed at simplifying inventory/warehouse management. This application features complete CRUD, authentication, and role configuration. | A desktop application built with native Java, aimed at simplifying clothing ordering and tailoring processes at the LC Busana SME. This application features complete CRUD, authentication, role configuration, profile management, and embedded storage."
+            },
+            "view-details": "View details"
         }
     },    
     "theme": {
