@@ -5,22 +5,25 @@ import NavTitle from '../components/NavTitle.vue';
 import TypeWriterText from '../components/TypeWriterText.vue';
 import SlideUpOnView from '../components/SlideUpOnView.vue';
 import { useToggleTheme } from '../composables/useToggleTheme';
-import { ref } from 'vue'; 
-
-// Halaman Navigasi
-const pages = ref([
-  { title: "Home", route: '/' },
-  { title: "About", route: '/about' },
-  { title: "Projects", route: '/projects' },
-])
+import { useLanguage } from '../composables/useLanguage';
+import { computed, ref } from 'vue'; 
 
 // Composable Tombol
-const { iconName: themeIcon, iconTitle: themeTitle, toggleTheme } = useToggleTheme()
+const { currentTheme, themeIcon, toggleTheme } = useToggleTheme()
+const { currentLanguage, languageIcon, changeLanguage, t  } = useLanguage()
 
 // Item Navigasi
 const menuItems = [ 
-  { title: themeTitle, icon: themeIcon, action: toggleTheme},
+  { title: currentTheme, icon: themeIcon, action: toggleTheme},
+  { title: currentLanguage, icon: languageIcon, action: changeLanguage},
 ];
+
+// Halaman Navigasi
+const pages = computed(() => [
+  { title: t('pages.home.name'), route: '/' },
+  { title: t('pages.about.name'), route: '/about' },
+  { title: t('pages.projects.name'), route: '/projects' },
+])
 
 //Ikon Sosmed
 const socialIcons = ref([
