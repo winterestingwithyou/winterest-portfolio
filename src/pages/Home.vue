@@ -5,6 +5,7 @@ import AppLayout from '../layouts/AppLayout.vue';
 import { useLanguage } from '../composables/useLanguage';
 import { I18nT } from 'vue-i18n';
 
+// Variabel
 const { t } = useLanguage()
 
 // Head

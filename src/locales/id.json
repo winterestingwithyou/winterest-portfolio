@@ -8,7 +8,14 @@
             "download-cv": "Unduh CV"
         },
         "about": {
-            "name": "Tentang"
+            "name": "Tentang",
+            "title": "Tentang saya",
+            "paragraph": {
+                "first": "Saya seorang mahasiswa Ilmu Komputer yang fokus pada Backend Development. Biasanya menggunakan Laravel dan sekarang sedang eksplor tentang Java Spring Boot. Saya sangat ingin menerapkan keterampilan pengembangan saya.",
+                "second": "Lingkungan akademis membuat saya semangat untuk terus belajar dan berkembang di industri teknologi, dengan tujuan untuk membuat sebuah solusi yang kuat dan skalabel."
+            },
+            "myself": "{alias} {'|'} {nickname}",
+            "myskills": "Keahlian"
         },
         "projects": {
             "name": "Projek"
@@ -18,5 +25,5 @@
         "dark": "Gelap",
         "light": "Terang"
     },
-    "closing": "Makaaih dah scroll, itu saja teman-teman."
+    "closing": "Makasih dah scroll, itu saja temen-temen."
 }

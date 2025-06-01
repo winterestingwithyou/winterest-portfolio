@@ -8,7 +8,14 @@
             "download-cv": "Download CV"
         },
         "about": {
-            "name": "About"
+            "name": "About",
+            "title": "About me",
+            "paragraph": {
+                "first": "I am a computer science student focusing on backend development. I primarily work with Laravel and am also exploring an interest in Java Spring Boot. I'm keen to apply my developing skills.",
+                "second": "My academic journey fuels my enthusiasm to learn and grow within the tech industry, aiming to build robust and scalable solutions."
+            },
+            "myself": "{alias} {'|'} {nickname}",
+            "myskills": "My skills"
         },
         "projects": {
             "name": "Projects"

@@ -2,12 +2,17 @@
 import { useHead } from '@vueuse/head';
 import { ref, computed } from 'vue';
 import { useDisplay } from 'vuetify';
+import { useLanguage } from '../composables/useLanguage';
 import AppLayout from '../layouts/AppLayout.vue';
 import SkillProgress from '../components/SkillProgress.vue';
+import { I18nT } from 'vue-i18n';
+
+// Variabel
+const { t } = useLanguage()
 
 // Head
 useHead({
-  title: 'About'
+  title: t('pages.about.name')
 })
 
 // Responsive Image
@@ -79,18 +84,23 @@ const imageUrl = ref('https://th.bing.com/th/id/OIP.gJddvMBHmsYI2OLu56duegAAAA?c
                 <div class="d-flex align-center mb-4 justify-center">
                   <span class="bg-highlight mr-3" style="height: 2px; width: 40px;"></span>
                   <h2 class="font-weight-bold text-uppercase text-h5 text-sm-h4 text-primary">
-                    About Me
+                    {{ t('pages.about.title') }}
                   </h2>
                 </div>
                 <p class="mb-4 text-secondary text-subtitle-2 text-sm-subtitle-1" style="line-height: 1.625rem;">
-                  I am a computer science student focusing on backend development. I primarily work with Laravel and am also exploring an interest in Java Spring Boot. I'm keen to apply my developing skills.
+                  {{ t('pages.about.paragraph.first') }}
                 </p>
                 <p class="mb-6 mb-sm-8 text-secondary text-subtitle-2 text-sm-subtitle-1" style="line-height: 1.625rem;">
-                  My academic journey fuels my enthusiasm to learn and grow within the tech industry, aiming to build robust and scalable solutions.
+                  {{ t('pages.about.paragraph.second') }}
                 </p>
-                <p class="font-cursive-signature text-highlight text-h4 text-sm-h3 mb-6 mb-sm-8">
-                  Winterest | Adam
-                </p>                
+                <i18n-t
+                  keypath="pages.about.myself"
+                  tag="p"
+                  class="font-cursive-signature text-highlight text-h4 text-sm-h3 mb-6 mb-sm-8"
+                >
+                  <template #alias>Winterest</template>
+                  <template #nickname>Adam</template>
+                </i18n-t>
               </div>
             </v-col>
           </v-row>
@@ -111,14 +121,14 @@ const imageUrl = ref('https://th.bing.com/th/id/OIP.gJddvMBHmsYI2OLu56duegAAAA?c
                     class="text-highlight text-uppercase font-weight-bold tracking-wider whitespace-nowrap origin-center"
                     style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 1.125rem; line-height: 1.75rem;"
                  >
-                    My Skills
+                    {{ t('pages.about.myskills') }}
                  </h3>
               </div>
             </v-col>
 
             <v-col cols="12" md="" class="mb-8">
               <div class="d-md-none text-center mb-8">
-                <h3 class="text-h6 font-weight-bold text-highlight text-uppercase">My Skills</h3>
+                <h3 class="text-h6 font-weight-bold text-highlight text-uppercase">{{ t('pages.about.myskills') }}</h3>
               </div>
 
               <v-container fluid class="pa-0">
