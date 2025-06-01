@@ -1,26 +1,20 @@
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 
 const props = defineProps({
+  text: String,
   speed: { type: Number, default: 50 },
   triggerOnce: { type: Boolean, default: false }
 })
 
-// Refs
 const displayedText = ref('')
-const textContainer = ref(null)
-const hiddenSlot = ref(null)
-
-let fullHTML = ''
 let isTyping = false
 let intervalId = null
 let hasTriggeredOnce = false
 
-onMounted(async () => {
-  await nextTick()
+const textContainer = ref(null)
 
-  fullHTML = hiddenSlot.value?.innerHTML?.trim() || ''
-
+onMounted(() => {
   const observer = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) {
       if (!isTyping && (!props.triggerOnce || !hasTriggeredOnce)) {
@@ -28,7 +22,6 @@ onMounted(async () => {
         startTyping()
       }
     } else if (!props.triggerOnce) {
-      // Reset jika triggerOnce = false
       clearInterval(intervalId)
       isTyping = false
       displayedText.value = ''
@@ -42,14 +35,13 @@ onMounted(async () => {
   }
 })
 
-// Fungsi ketik dengan HTML parsing
+// Fungsi ketik
 function startTyping() {
   if (isTyping) return
   isTyping = true
   displayedText.value = ''
 
-  // Buat array karakter termasuk tag HTML
-  const characters = Array.from(fullHTML.match(/(<[^>]+>)|([^<])/g) || [])
+  const characters = Array.from(props.text.match(/(<[^>]+>)|([^<])/g) || [])
   let index = 0
 
   intervalId = setInterval(() => {
@@ -61,12 +53,18 @@ function startTyping() {
     }
   }, props.speed)
 }
+
+// Jika teks berubah (karena locale ganti), reset jika triggerOnce = false
+watch(() => props.text, () => {
+  if (!props.triggerOnce) {
+    clearInterval(intervalId)
+    isTyping = false
+    displayedText.value = ''
+    startTyping()
+  }
+})
 </script>
 
 <template>
   <div ref="textContainer" v-html="displayedText"></div>
-
-  <div ref="hiddenSlot" class="d-none">
-    <slot />
-  </div>
 </template>

@@ -59,7 +59,7 @@ const socialIcons = ref([
       </div>
 
       <div class="pt-0 text-grey-lighten-1">
-        <type-writer-text>Thanks for scrolling, that's all folks.</type-writer-text>      
+        <type-writer-text :text="t('closing')" />   
       </div>
 
       <div class="py-4">

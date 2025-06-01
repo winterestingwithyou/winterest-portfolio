@@ -17,5 +17,6 @@
     "theme": {
         "dark": "Dark",
         "light": "Light"
-    }
+    },
+    "closing": "Thanks for scrolling, that's all folks."
 }
