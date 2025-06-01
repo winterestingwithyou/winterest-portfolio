@@ -1,0 +1,18 @@
+{
+    "pages": {
+        "home": {
+            "name": "Home",
+            "hello": "Hello"
+        },
+        "about": {
+            "name": "About"
+        },
+        "projects": {
+            "name": "Projects"
+        }
+    },    
+    "theme": {
+        "dark": "Dark",
+        "light": "Light"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "pages": {
+        "home": {
+            "name": "Beranda",
+            "hello": "Halo"
+        },
+        "about": {
+            "name": "Tentang"
+        },
+        "projects": {
+            "name": "Projek"
+        }
+    },    
+    "theme": {
+        "dark": "Gelap",
+        "light": "Terang"
+    }
+}

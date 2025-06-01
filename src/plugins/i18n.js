@@ -1,21 +1,17 @@
 import { createI18n } from 'vue-i18n'
+import en from '../locales/en.json'
+import id from '../locales/id.json'
 
 const messages = {
-  en: {
-    hello: 'Hello!',
-    welcome: 'Welcome to our app',
-  },
-  id: {
-    hello: 'Halo!',
-    welcome: 'Selamat datang di aplikasi kami',
-  }
+  en,
+  id
 }
 
 const i18n = createI18n({
   legacy: false, // untuk Composition API
   locale: 'en',
   fallbackLocale: 'en',
-  messages,
+  messages
 })
 
 export default i18n
